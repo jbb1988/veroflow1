@@ -1,0 +1,837 @@
+/* Custom Font */
+@font-face {
+    font-family: 'Onstage';
+    src: url('Images/ONSTAGE REGULAR.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-image: url('Images/weave.png'); /* Updated filename */
+    background-size: cover; /* Cover the entire page */
+    background-attachment: fixed; /* Keep background fixed during scroll */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff; /* Change default text color to white for dark background */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    /* transition: background-color 0.3s ease, color 0.3s ease; */ /* Remove transition if background is fixed image */
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    padding: 4rem 2rem; /* Default padding, adjust as needed */
+    box-sizing: border-box;
+    min-height: 50vh; /* Ensure sections have some minimum height */
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+    /* background-color: #ffffff; */ /* Remove white background */
+    color: #ffffff; /* Ensure text is white */
+    text-align: center;
+    /* background-color: rgba(0, 0, 0, 0.5); */ /* Removed overlay */
+    border-radius: 8px; /* Optional: round corners of the overlay */
+    margin-bottom: 1rem; /* Add space between sections */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.hero-content h1 {
+    font-family: 'Onstage', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+/* Onstage Font Class */
+.onstage-font {
+    font-family: 'Onstage', sans-serif;
+    font-weight: normal;
+}
+
+.hero-content .highlight {
+    background: linear-gradient(to bottom, #1e3a8a, #3b82f6); /* Blue gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: #e5e7eb; /* Lighter gray text for readability on dark bg */
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.hero-content p span {
+    font-weight: 700;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.badges img {
+    height: 54px;
+    width: auto;
+}
+
+.badges img:first-child {
+     height: auto;
+     width: 144px;
+}
+
+.hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Device Showcase Section */
+.device-showcase-section {
+    padding: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.device-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.device-image {
+    flex: 1;
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 600px; /* Maximum width to prevent overly large images */
+}
+
+.device-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* One App Section */
+.one-app-section {
+    position: relative;
+    height: 100vh;
+    /* background-color: #1c1917; */ /* Remove section background */
+    color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    /* background-color: rgba(0, 0, 0, 0.6); */ /* Removed overlay */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.one-app-content {
+    max-width: 600px;
+}
+
+.one-app-content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    background: linear-gradient(to bottom, #ffffff, #a1a1aa); /* white to gray-400 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+.one-app-content p {
+    font-size: 2.25rem;
+    color: #e5e7eb; /* Lighter gray */
+    line-height: 1.6;
+}
+
+/* Highlight Features Section */
+.highlight-features-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* background-color: #1c1917; */ /* Remove section background */
+    color: #ffffff;
+    padding: 4rem 8rem;
+    gap: 2rem;
+    /* background-color: rgba(0, 0, 0, 0.6); */ /* Removed overlay */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.highlight-image {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.highlight-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+}
+
+.highlight-text h1 {
+    font-size: 3.75rem;
+    font-weight: 700;
+    color: #9ca3af; /* Lighter gray for inactive text */
+    transition: color 0.5s ease;
+}
+
+.highlight-text h1.active {
+     color: #ffffff;
+}
+
+.highlight-text .highlight-pink-yellow {
+    background: linear-gradient(to right, #ec4899, #f59e0b); /* pink-500 to yellow-500 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Fully Featured Section */
+.fully-featured-section {
+    position: relative;
+    height: 100vh;
+    /* background-color: #1c1917; */ /* Remove section background */
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgba(0, 0, 0, 0.7); */ /* Removed overlay */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fully-featured-section h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #9ca3af; /* Lighter gray */
+}
+
+/* Feature Highlights Section (Cards) */
+.feature-highlights-section {
+    /* background-color: #1c1917; */ /* Remove section background */
+    padding-bottom: 8rem;
+    padding-top: 2rem;
+    /* background-color: rgba(0, 0, 0, 0.6); */ /* Removed overlay */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.feature-grid-top,
+.feature-grid-bottom {
+    display: flex;
+    gap: 1rem;
+    width: 80%;
+    margin: 0 auto 1rem auto;
+}
+
+.feature-card {
+    width: 50%;
+    border: 1px solid #44403c; /* border-gray-700 */
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Stacked layout for feature cards (text above image) */
+.feature-card-stacked {
+    width: 50%;
+    border: 1px solid #44403c; /* border-gray-700 */
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for better contrast */
+}
+
+.feature-card-stacked .card-text {
+    position: relative; /* Not absolute */
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-sizing: border-box;
+    background: none; /* No gradient background */
+}
+
+.feature-card-stacked .feature-card-image {
+    width: 100%;
+}
+
+.feature-card-stacked .card-text h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.feature-card-stacked .card-text p {
+    font-size: 1.25rem;
+    color: #d1d5db; /* Lighter gray */
+    margin-bottom: 1.5rem;
+}
+
+/* Stacked layout for full-width feature cards (text above image) */
+.feature-card-stacked-full {
+    width: 80%;
+    margin: 0 auto 1rem auto;
+    border: 1px solid #44403c; /* border-gray-700 */
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for better contrast */
+}
+
+.feature-card-stacked-full .card-text {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    background: none;
+}
+
+.feature-card-stacked-full .feature-card-image-full {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.feature-card-stacked-full .feature-card-image-full img {
+    max-width: 80%;
+    height: auto;
+}
+
+/* Larger text classes */
+.larger-heading {
+    font-size: 3.5rem !important; /* Increased from 2.5rem */
+    margin-bottom: 1.5rem !important;
+}
+
+.larger-text {
+    font-size: 1.5rem !important; /* Increased from 1.25rem */
+    margin-bottom: 2rem !important;
+}
+
+.feature-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature-card .card-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.8), transparent);
+    text-align: center;
+    padding: 1rem 2rem 4rem 2rem;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.feature-card .card-text h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card .card-text p {
+    font-size: 1.25rem;
+    color: #d1d5db; /* Lighter gray */
+}
+
+.feature-card-full {
+    width: 80%;
+    margin: 0 auto 1rem auto; /* Added bottom margin */
+    border: 1px solid #44403c; /* border-gray-700 */
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.feature-card-full img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.feature-card-full .card-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.8), transparent);
+    padding: 2rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.feature-card-full .card-text-overlay h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card-full .card-text-overlay p {
+    font-size: 1.25rem;
+    color: #d1d5db; /* Lighter gray */
+}
+
+/* Data Management Section (formerly Apple Health Section) */
+.data-management-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 60vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better contrast */
+    color: #ffffff; /* White text */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a subtle animation to make it more dynamic */
+.data-management-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(30, 58, 138, 0.1)); /* VEROflow blue gradient */
+    z-index: -1;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.data-management-section h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+}
+
+.data-management-section p {
+    font-size: 1.75rem;
+    color: #e5e7eb; /* Lighter gray */
+    margin-bottom: 1rem;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+/* Routine Section */
+.routine-section {
+    position: relative;
+    min-height: 70vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for better contrast */
+    color: #ffffff; /* White text */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.routine-content {
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for better text visibility */
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.routine-content h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #ffffff; /* Solid white color instead of gradient */
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+}
+
+.routine-content .highlight-blue {
+    color: #3b82f6; /* VEROflow blue */
+    background: none; /* Remove gradient */
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Add glow effect */
+}
+
+.routine-content p {
+    font-size: 1.75rem;
+    color: #e5e7eb; /* Lighter gray */
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Additional Previews Section */
+.additional-previews-section {
+    /* background-color: #ffffff; */ /* Remove white background */
+    padding-bottom: 6rem;
+    padding-top: 2rem;
+    /* background-color: rgba(0, 0, 0, 0.6); */ /* Removed overlay */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.additional-previews-section .feature-card-full {
+     border-color: #d1d5db; /* border-gray-300 */
+     margin-bottom: 1rem;
+}
+
+.additional-previews-section .feature-card-full .dark-overlay {
+    background: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.2), transparent);
+}
+
+.additional-previews-section .feature-card-full .dark-overlay h2 {
+    color: #ffffff;
+}
+
+.additional-previews-section .feature-card-full .dark-overlay p {
+    color: #e5e7eb; /* gray-200 */
+}
+
+.additional-previews-section .feature-grid-bottom {
+    /* Uses .feature-grid-bottom styles defined earlier */
+}
+
+.additional-previews-section .feature-grid-bottom .feature-card {
+    border-color: #d1d5db; /* border-gray-300 */
+}
+
+.additional-previews-section .feature-card .light-text {
+    background: none;
+    padding-bottom: 1rem;
+    /* Inherits text alignment and other properties from .card-text */
+}
+
+.additional-previews-section .feature-card .light-text h2 {
+    color: #000000;
+}
+
+.additional-previews-section .feature-card .light-text p {
+    color: #e5e7eb; /* Lighter gray */
+}
+
+/* App Features Section */
+.app-features-section {
+    padding: 5rem 2rem;
+    /* background-color: #ffffff; */ /* Remove white background */
+    color: #ffffff; /* White text */
+    /* background-color: rgba(0, 0, 0, 0.7); */ /* Removed overlay */
+    border-radius: 8px;
+    margin-bottom: 1rem; /* Add space before footer */
+}
+
+.app-features-section > h2 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.app-features-section > p {
+    font-size: 1.875rem;
+    font-weight: 300;
+    text-align: center;
+    color: #d1d5db; /* Lighter gray */
+    margin-bottom: 4rem;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 1152px;
+    margin: 0 auto;
+}
+
+.feature-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.feature-item {
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: scale(1.02);
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    /* Icons would require SVG or font library */
+}
+
+.feature-item p {
+    font-size: 1.125rem;
+    color: #d1d5db; /* Lighter gray */
+    /* padding-left: 3rem; /* pl-12 - Adjust if icons are added */
+}
+
+/* Header Styles */
+.page-header {
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    text-align: center; /* Center the logo */
+    margin-bottom: 1rem;
+    border-radius: 0 0 8px 8px; /* Optional: round bottom corners */
+}
+
+.page-header img {
+    max-height: 150px; /* Increased size by 300% */
+    width: auto;
+    display: inline-block; /* Allow centering */
+}
+
+/* Footer Styles */
+.page-footer {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background for footer */
+    text-align: center;
+    margin-top: 2rem;
+    color: #a1a1aa; /* Lighter text for footer */
+}
+
+.page-footer img {
+    max-height: 40px; /* Adjust height */
+    width: auto;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* iPhone Frame Container Styles */
+.iphone-frame-container {
+    position: relative;
+    display: inline-block; /* Allow it to size based on content */
+    width: auto; /* Adjust as needed, maybe max-width */
+    max-width: 90%; /* Limit width */
+    margin: 1rem auto; /* Center it */
+}
+
+.iphone-frame-container::before {
+    content: "";
+    position: absolute;
+    top: -5%; /* Adjust percentage to position frame correctly */
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-image: url('Images/iPhone frame.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1; /* Frame behind screenshot */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.iphone-frame-container .screenshot {
+    position: relative; /* Needed for z-index */
+    display: block;
+    width: 100%; /* Screenshot takes full width of container */
+    height: auto;
+    z-index: 0; /* Screenshot behind frame's pseudo-element */
+    /* Add padding/margin if needed to fit inside the frame image visually */
+     border-radius: 5%; /* Match typical iPhone screen rounding */
+     box-sizing: border-box;
+     /* The exact padding/positioning depends heavily on the frame image */
+     /* This might require trial and error */
+     padding: 11% 6% 10% 6%; /* Example padding - TOP/RIGHT/BOTTOM/LEFT */
+
+}
+
+/* Specific adjustments for frame containers within cards */
+.feature-card .iphone-frame-container,
+.additional-features-section .iphone-frame-container {
+    width: 80%; /* Make frame smaller within cards */
+    margin-top: 2rem; /* Add space above frame in cards */
+}
+
+.feature-card-full .iphone-frame-container {
+     width: 100%; /* Full width within the full card */
+     max-width: 400px; /* Limit size */
+     margin: 0 auto; /* Center */
+}
+.feature-card-full .iphone-frame-container .screenshot {
+     padding: 11% 6% 10% 6%; /* Adjust padding if needed for full card */
+}
+
+
+/* Highlight Blue Class */
+.highlight-blue {
+    /* Similar to .highlight but with VEROflow blue */
+    background: linear-gradient(to bottom, #3b82f6, #1e3a8a); /* Adjust colors */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1024px) { /* lg breakpoint */
+    /* Hero */
+    .hero-content h1 { font-size: 3rem; width: 90%; margin-left: auto; margin-right: auto; }
+    .hero-content p { font-size: 1.25rem; width: 90%; margin-left: auto; margin-right: auto; }
+    .badges { flex-direction: column; gap: 2rem; }
+    .hero-image img { width: 90%; }
+
+    /* One App */
+    .one-app-content h1 { font-size: 3.5rem; }
+    .one-app-content p { font-size: 1.5rem; }
+
+    /* Highlight Features */
+    .highlight-features-section { flex-direction: column; padding: 4rem 2rem; text-align: center; }
+    .highlight-image { width: 100%; margin-bottom: 2rem; }
+    .highlight-text { width: 100%; gap: 2rem; align-items: center; }
+    .highlight-text h1 { font-size: 3rem; }
+
+    /* Fully Featured */
+    .fully-featured-section h1 { font-size: 4rem; }
+
+    /* Feature Highlights Cards */
+    .feature-grid-top, .feature-grid-bottom, .feature-card-full { width: 90%; }
+    .feature-card .card-text h2, .feature-card-full .card-text-overlay h2 { font-size: 1.75rem; }
+    .feature-card .card-text p, .feature-card-full .card-text-overlay p { font-size: 1rem; }
+    .feature-card-full .card-text-overlay { padding: 1rem; }
+
+     /* Additional Previews Cards */
+    .additional-previews-section .feature-card .light-text h2,
+    .additional-previews-section .feature-card-full .card-text-overlay h2 { font-size: 1.75rem; }
+    .additional-previews-section .feature-card .light-text p,
+    .additional-previews-section .feature-card-full .card-text-overlay p { font-size: 1rem; }
+
+    /* Apple Health */
+    .apple-health-section h2 { font-size: 3.5rem; }
+    .apple-health-section p { font-size: 1.25rem; }
+
+    /* Routine */
+    .routine-content h1 { font-size: 3.5rem; }
+    .routine-content p { font-size: 1.25rem; }
+
+    /* App Features */
+    .app-features-section > h2 { font-size: 3rem; }
+    .app-features-section > p { font-size: 1.5rem; }
+}
+
+@media (max-width: 768px) { /* md breakpoint */
+    /* Hero */
+    .hero-section { padding-top: 5rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content p { font-size: 1.1rem; }
+
+    /* One App */
+    .one-app-content h1 { font-size: 3rem; }
+    .one-app-content p { font-size: 1.25rem; }
+
+    /* Highlight Features */
+    .highlight-text h1 { font-size: 2.5rem; }
+
+    /* Fully Featured */
+    .fully-featured-section h1 { font-size: 3.5rem; }
+
+    /* Feature Highlights Cards */
+    .feature-grid-top, .feature-grid-bottom { flex-direction: column; width: 100%; }
+    .feature-card { width: 100%; }
+    .feature-card-full { display: none; } /* Hide full-width card */
+    .feature-card .card-text h2 { font-size: 1.25rem; }
+    .feature-card .card-text p { font-size: 0.875rem; }
+
+    /* Additional Previews Cards */
+    /* .additional-previews-section .feature-card-full is already hidden */
+    /* .additional-previews-section .feature-grid-bottom is already stacked */
+
+    /* Apple Health */
+    .apple-health-section h2 { font-size: 3rem; }
+    .apple-health-section p { font-size: 1.1rem; }
+
+    /* Routine */
+    .routine-content h1 { font-size: 3rem; }
+    .routine-content p { font-size: 1.1rem; }
+
+    /* App Features */
+    .app-features-section > h2 { font-size: 2.5rem; }
+    .app-features-section > p { font-size: 1.25rem; margin-bottom: 3rem; }
+    .features-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
