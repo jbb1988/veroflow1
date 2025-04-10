@@ -148,7 +148,8 @@ struct UserProfileView: View {
                             Image("MARS Company")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: 60)
+                                .frame(height: 180)
+                                .frame(maxWidth: .infinity)
                         }
                         .padding(.top, 20)
                         .padding(.bottom, 30)

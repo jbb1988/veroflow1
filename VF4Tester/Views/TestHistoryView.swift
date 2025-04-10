@@ -673,7 +673,7 @@ struct TestHistoryView: View {
                             isMenuExpanded.toggle()
                         }
                     } label: {
-                        Image("Drop")
+                        Image("drop")
                             .resizable()
                             .frame(width: 48, height: 48)
                             .rotationEffect(.degrees(isMenuExpanded ? 180 : 0))
