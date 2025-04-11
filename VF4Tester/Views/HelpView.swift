@@ -197,7 +197,7 @@ public struct VeroflowHeader: ToolbarContent {
                 .resizable()
                 .renderingMode(.original)
                 .aspectRatio(contentMode: .fit)
-                .frame(height: 80)
+                .frame(height: 40)
         }
     }
 }
