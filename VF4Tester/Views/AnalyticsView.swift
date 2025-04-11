@@ -155,7 +155,7 @@ struct AnalyticsView: View {
     
     @State private var selectedTest: TestResult? = nil
     @State private var showHistorySheet = false
-    @State private var historyFilter: TestHistoryView.FilterOption = .all
+    @State private var selectedHistoryFilter: TestHistoryView.FilterOption = .all
     @State private var selectedChartType: ChartType = .line
     
     var body: some View {
@@ -202,8 +202,7 @@ struct AnalyticsView: View {
                     VStack(spacing: 16) {
                         HStack(spacing: 16) {
                             Button {
-                                selectedTest = nil
-                                historyFilter = .passed
+                                selectedHistoryFilter = .passed
                                 showHistorySheet = true
                             } label: {
                                 StatCard(
@@ -215,8 +214,7 @@ struct AnalyticsView: View {
                             }
                             .buttonStyle(PlainButtonStyle())
                             Button {
-                                selectedTest = nil
-                                historyFilter = .all
+                                selectedHistoryFilter = .all
                                 showHistorySheet = true
                             } label: {
                                 StatCard(
@@ -230,8 +228,7 @@ struct AnalyticsView: View {
                         }
                         HStack(spacing: 16) {
                             Button {
-                                selectedTest = nil
-                                historyFilter = .all
+                                selectedHistoryFilter = .all
                                 showHistorySheet = true
                             } label: {
                                 StatCard(
@@ -243,8 +240,7 @@ struct AnalyticsView: View {
                             }
                             .buttonStyle(PlainButtonStyle())
                             Button {
-                                selectedTest = nil
-                                historyFilter = .failed
+                                selectedHistoryFilter = .failed
                                 showHistorySheet = true
                             } label: {
                                 StatCard(
@@ -349,7 +345,7 @@ struct AnalyticsView: View {
                 .presentationDetents([.medium, .large])
         }
         .sheet(isPresented: $showHistorySheet) {
-            TestHistoryView(initialFilter: historyFilter)
+            TestHistoryView(initialFilter: selectedHistoryFilter)
                 .presentationDetents([.medium, .large])
         }
     }

@@ -5,24 +5,24 @@ import UIKit
 
 struct TestHistoryView: View {
     @EnvironmentObject var viewModel: TestViewModel
-
+    
     // Local State
     @State private var searchText = ""
     @State private var selectedResult: TestResult? = nil
     @State private var showingExportSheet = false
-
-    @State private var selectedHistoryFilter: FilterOption
-    @State private var selectedSortOrder: SortOrder
-    @State private var selectedMeterSize: MeterSizeFilter
-    @State private var selectedManufacturer: MeterManufacturerFilter
+    @State private var selectedSortOrder: SortOrder = .descending
+    @State private var selectedMeterSize: MeterSizeFilter = .all
+    @State private var selectedManufacturer: MeterManufacturerFilter = .all
     @State private var startDate: Date
     @State private var endDate: Date
-
+    
+    @Binding var selectedHistoryFilter: FilterOption
+    
     @State private var isFilterExpanded = false
     @State private var exportedData: URL? = nil
     @State private var showShareSheet = false
     @Environment(\.presentationMode) var presentationMode
-
+    
     @State private var showingExportAllSheet = false
     @State private var exportAllData: URL? = nil
     @State private var showExportAllShareSheet = false
@@ -171,12 +171,9 @@ struct TestHistoryView: View {
     
     // MARK: - Init
     init(initialFilter: FilterOption = .all) {
-        _selectedHistoryFilter = State(initialValue: initialFilter)
-        _selectedSortOrder = State(initialValue: .descending)
-        _selectedMeterSize = State(initialValue: .all)
-        _selectedManufacturer = State(initialValue: .all)
         _startDate = State(initialValue: Calendar.current.date(byAdding: .month, value: -1, to: Date()) ?? Date())
         _endDate = State(initialValue: Date())
+        _selectedHistoryFilter = State(wrappedValue: initialFilter).projectedValue
     }
     
     // MARK: - Body
@@ -215,6 +212,7 @@ struct TestHistoryView: View {
                     if !searchText.isEmpty {
                         Button(action: {
                             searchText = ""
+                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                         }) {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.gray)
@@ -270,6 +268,9 @@ struct TestHistoryView: View {
                     .padding(.vertical)
                 }
                 .padding(.bottom, 80)
+            }
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
             
             ExportMenuButton(
