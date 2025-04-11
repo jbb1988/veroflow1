@@ -556,7 +556,12 @@ struct TestView: View {
                 MarsReadingField(title: "End Read", text: $viewModel.largeMeterEnd, field: .largeEnd)
             }
             HStack(spacing: 12) {
-                Button(action: { showImageSourceSheet = true }) {
+                Button(action: {
+                    let feedback = UIImpactFeedbackGenerator(style: .medium)
+                    feedback.prepare()
+                    feedback.impactOccurred()
+                    selectedImageSource = .camera
+                }) {
                     HStack {
                         Image(systemName: "camera")
                         Text("Capture Meter")
